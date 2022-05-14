@@ -20,8 +20,9 @@ class EntriesActivity : AppCompatActivity() {
 
         val calc: Button = findViewById(R.id.calcBtn)
         calc.setOnClickListener {
-            calculate()
-
+            if (calculate()) {
+                TODO()
+            }
         }
     }
 
