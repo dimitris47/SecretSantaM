@@ -21,7 +21,10 @@ class EntriesActivity : AppCompatActivity() {
         val calc: Button = findViewById(R.id.calcBtn)
         calc.setOnClickListener {
             if (calculate()) {
-                TODO()
+                //
+                val namesIntent = Intent(this, NamesActivity::class.java).apply {}
+                //
+                startActivity(namesIntent)
             }
         }
     }
@@ -33,11 +36,9 @@ class EntriesActivity : AppCompatActivity() {
         for (i in 0 until num!!)
             players!!.add(i)
         players!!.shuffle()
-
         for (i in 0 until num!!)
             if (players!![i] == i)
                 calculate()
-
         return true
     }
 }

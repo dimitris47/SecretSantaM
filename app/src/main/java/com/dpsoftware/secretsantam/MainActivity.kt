@@ -3,9 +3,7 @@ package com.dpsoftware.secretsantam
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import androidx.core.view.get
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enterNames(num: Int) {
-        val intent = Intent(this, EntriesActivity::class.java).apply {}
-        intent.putExtra("num", num)
-        startActivity(intent)
+        val entriesIntent = Intent(this, EntriesActivity::class.java).apply {}
+        entriesIntent.putExtra("num", num)
+        startActivity(entriesIntent)
     }
 }
