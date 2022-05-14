@@ -1,16 +1,18 @@
 package com.dpsoftware.secretsantam
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.*
 
 class EntriesActivity : AppCompatActivity() {
 
-    var num: Int? = null
-    var calcCount: Int = 0
-    var players: ArrayList<Int>? = null
+    private var num: Int? = null
+    private var calcCount: Int = 0
+    private var players: ArrayList<Int>? = null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entries)
@@ -18,10 +20,25 @@ class EntriesActivity : AppCompatActivity() {
         val intent: Intent = intent
         num = intent.getIntExtra("num", 3)
 
+        val enterNamesList: ListView = findViewById(R.id.enterNamesList)
+        val editTexts = ArrayList<EditText>(num!!)
+        for (i in 0 until num!!) {
+            val editText = EditText(this)
+            editText.hint = "Player " + (i + 1)
+            editText.inputType = android.text.InputType.TYPE_CLASS_TEXT
+            editTexts.add(editText)
+        }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, editTexts)
+        enterNamesList.adapter = adapter
+
         val calc: Button = findViewById(R.id.calcBtn)
         calc.setOnClickListener {
-            if (calculate()) {
-                //
+            if (!calculate()) {
+                Toast.makeText(this,
+                    "Calculation was unsuccessful, please try again",
+                    Toast.LENGTH_LONG)
+                    .show()
+            } else {
                 val namesIntent = Intent(this, NamesActivity::class.java).apply {}
                 //
                 startActivity(namesIntent)
