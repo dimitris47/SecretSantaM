@@ -50,6 +50,7 @@ class EntriesActivity : AppCompatActivity() {
         if (++calcCount == 65535)
             return false
 
+        players!!.clear()
         for (i in 0 until num!!)
             players!!.add(i)
         players!!.shuffle()
