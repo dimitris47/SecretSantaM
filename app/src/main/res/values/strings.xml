@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SecretSantaM</string>
+    <string name="numberOfPlayers">Number of players</string>
+    <string name="enter_names">Enter names</string>
+</resources>
