@@ -23,9 +23,8 @@ class MainActivity : AppCompatActivity() {
         val arrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
             this, android.R.layout.simple_spinner_item, spinnerArray)
         spinner!!.adapter = arrayAdapter
-        
-        enterNames = findViewById(R.id.enterNamesBtn)
 
+        enterNames = findViewById(R.id.enterNamesBtn)
         enterNames!!.setOnClickListener {
             val text: String = spinner!!.toString()
             if (text.isNotEmpty())
@@ -34,9 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enterNames(num: Int) {
-        val intent = Intent(this, EntriesActivity::class.java).apply {
-
-        }
+        val intent = Intent(this, EntriesActivity::class.java).apply {}
         intent.putExtra("num", num)
         startActivity(intent)
     }
