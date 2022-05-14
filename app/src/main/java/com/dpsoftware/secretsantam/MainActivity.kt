@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         enterNames!!.setOnClickListener {
             val text: String = spinner!!.toString()
             if (text.isNotEmpty())
-                enterNames(text.toInt())
+                enterNames(text)
         }
     }
 
-    private fun enterNames(num: Int) {
+    private fun enterNames(num: String) {
         val entriesIntent = Intent(this, EntriesActivity::class.java).apply {}
         entriesIntent.putExtra("num", num)
         startActivity(entriesIntent)
