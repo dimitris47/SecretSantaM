@@ -3,10 +3,9 @@ package com.dpsoftware.secretsantam
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 
 class EntriesActivity : AppCompatActivity() {
 
@@ -22,6 +21,8 @@ class EntriesActivity : AppCompatActivity() {
 
         val intent: Intent = intent
         num = intent.getIntExtra("num", 3)
+
+        players = ArrayList(3)
 
         val enterNamesList: ListView = findViewById(R.id.enterNamesList)
         val editTexts = ArrayList<EditText>(num!!)
@@ -65,7 +66,7 @@ class EntriesActivity : AppCompatActivity() {
         if (++calcCount == 65535)
             return false
 
-        if (!players!!.isEmpty())
+        if (players!!.isNotEmpty())
             players!!.clear()
         for (i in 0 until num!!)
             players!!.add(i)
