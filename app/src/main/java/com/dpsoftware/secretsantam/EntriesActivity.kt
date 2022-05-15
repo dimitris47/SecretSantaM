@@ -41,6 +41,10 @@ class EntriesActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG)
                     .show()
             } else {
+                Toast.makeText(this,
+                    "Calculation completed successfully, you can now get your results!",
+                    Toast.LENGTH_LONG)
+                    .show()
                 val namesIntent = Intent(this, NamesActivity::class.java).apply {}
                 //
                 startActivity(namesIntent)
