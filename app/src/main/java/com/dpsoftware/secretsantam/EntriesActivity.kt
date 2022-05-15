@@ -46,6 +46,10 @@ class EntriesActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG)
                     .show()
                 val namesIntent = Intent(this, NamesActivity::class.java).apply {}
+                val playerNames: ArrayList<String> = ArrayList(3)
+                for (i in 0 until num!!) {
+                    playerNames.add(editTexts[i].text.toString())
+                }
                 //
                 startActivity(namesIntent)
             }
