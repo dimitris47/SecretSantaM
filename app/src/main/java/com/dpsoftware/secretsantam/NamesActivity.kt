@@ -16,6 +16,7 @@ class NamesActivity : AppCompatActivity() {
 
         val intent: Intent = intent
         val names: ArrayList<String>? = intent.getStringArrayListExtra("names")
+        val players: ArrayList<Int>? = intent.getIntegerArrayListExtra("players")
 
         val namesList: ListView = findViewById(R.id.namesList)
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names!!)

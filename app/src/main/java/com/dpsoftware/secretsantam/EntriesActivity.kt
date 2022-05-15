@@ -55,6 +55,7 @@ class EntriesActivity : AppCompatActivity() {
                     playerNames.add(name)
                 }
                 namesIntent.putStringArrayListExtra("names", playerNames)
+                namesIntent.putExtra("players", players)
                 startActivity(namesIntent)
             }
         }
@@ -64,7 +65,8 @@ class EntriesActivity : AppCompatActivity() {
         if (++calcCount == 65535)
             return false
 
-        players!!.clear()
+        if (!players!!.isEmpty())
+            players!!.clear()
         for (i in 0 until num!!)
             players!!.add(i)
         players!!.shuffle()
