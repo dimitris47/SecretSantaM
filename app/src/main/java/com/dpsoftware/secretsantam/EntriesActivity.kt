@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.*
 
 class EntriesActivity : AppCompatActivity() {
@@ -48,7 +49,10 @@ class EntriesActivity : AppCompatActivity() {
                 val namesIntent = Intent(this, NamesActivity::class.java).apply {}
                 val playerNames: ArrayList<String> = ArrayList(3)
                 for (i in 0 until num!!) {
-                    playerNames.add(editTexts[i].text.toString())
+                    var name = editTexts[i].text.toString()
+                    if (name == "")
+                        name = "Player " + (i + 1)
+                    playerNames.add(name)
                 }
                 //
                 startActivity(namesIntent)
