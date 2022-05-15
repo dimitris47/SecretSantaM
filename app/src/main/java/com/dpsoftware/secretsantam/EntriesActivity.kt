@@ -54,7 +54,7 @@ class EntriesActivity : AppCompatActivity() {
                         name = "Player " + (i + 1)
                     playerNames.add(name)
                 }
-                //
+                namesIntent.putStringArrayListExtra("names", playerNames)
                 startActivity(namesIntent)
             }
         }
