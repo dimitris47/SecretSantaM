@@ -2,9 +2,11 @@ package com.dpsoftware.secretsantam
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,13 +28,12 @@ class MainActivity : AppCompatActivity() {
 
         enterNames = findViewById(R.id.enterNamesBtn)
         enterNames!!.setOnClickListener {
-            val text: String = spinner!!.toString()
-            if (text.isNotEmpty())
-                enterNames(text)
+            val num: Int = spinner!!.selectedItem.toString().toInt()
+            enterNames(num)
         }
     }
 
-    private fun enterNames(num: String) {
+    private fun enterNames(num: Int) {
         val entriesIntent = Intent(this, EntriesActivity::class.java).apply {}
         entriesIntent.putExtra("num", num)
         startActivity(entriesIntent)
