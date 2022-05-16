@@ -24,7 +24,7 @@ class NamesActivity : AppCompatActivity() {
 
         namesList.setOnItemClickListener { _, _, position, _ ->
             Toast.makeText(this,
-                "${names[position]}, you are getting a present for ${names[players?.get(position)!!]}",
+                "${names[position]}, you are getting a present for ${names[players?.get(position)!!]}!",
                 Toast.LENGTH_SHORT)
                 .show()
         }
