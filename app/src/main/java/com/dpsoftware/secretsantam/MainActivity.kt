@@ -4,31 +4,26 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
-
-    private var spinner: Spinner? = null
-    private var enterNames: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         setContentView(R.layout.activity_main)
 
-        spinner = findViewById(R.id.spinner)
         val spinnerArray: ArrayList<String> = ArrayList(3)
         for (i in 3..99)
             spinnerArray.add(i.toString())
         val arrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
             this, android.R.layout.simple_spinner_item, spinnerArray)
-        spinner!!.adapter = arrayAdapter
+        spinner.adapter = arrayAdapter
 
-        enterNames = findViewById(R.id.enterNamesBtn)
-        enterNames!!.setOnClickListener {
-            val num: Int = spinner!!.selectedItem.toString().toInt()
+        enterNamesBtn.setOnClickListener {
+            val num: Int = spinner.selectedItem.toString().toInt()
             enterNames(num)
         }
     }

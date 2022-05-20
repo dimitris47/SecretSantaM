@@ -4,9 +4,9 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_names.*
 
 class NamesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,6 @@ class NamesActivity : AppCompatActivity() {
         val names: ArrayList<String>? = intent.getStringArrayListExtra("names")
         val players: ArrayList<Int>? = intent.getIntegerArrayListExtra("players")
 
-        val namesList: ListView = findViewById(R.id.namesList)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, names!!)
         namesList.adapter = adapter
 

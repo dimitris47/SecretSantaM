@@ -4,11 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_entries.*
 
 class EntriesActivity : AppCompatActivity() {
 
@@ -27,7 +26,6 @@ class EntriesActivity : AppCompatActivity() {
 
         players = ArrayList(3)
 
-        val enterNamesList: ListView = findViewById(R.id.enterNamesList)
         val editTexts = ArrayList<EditText>(num!!)
         for (i in 0 until num!!) {
             val editText = EditText(this)
@@ -38,8 +36,7 @@ class EntriesActivity : AppCompatActivity() {
         val adapter = EnterNamesAdapter(editTexts)
         enterNamesList.adapter = adapter
 
-        val calc: Button = findViewById(R.id.calcBtn)
-        calc.setOnClickListener {
+        calcBtn.setOnClickListener {
             if (!calculate()) {
                 Toast.makeText(this,
                     "Calculation was unsuccessful, please try again",
