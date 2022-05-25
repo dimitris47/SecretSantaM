@@ -21,6 +21,11 @@ class EntriesActivity : AppCompatActivity() {
         requestedOrientation = (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         setContentView(R.layout.activity_entries)
 
+        Toast.makeText(this,
+            "You can (optionally) enter the names of the players here",
+            Toast.LENGTH_LONG)
+            .show()
+
         val intent: Intent = intent
         num = intent.getIntExtra("num", 3)
 
