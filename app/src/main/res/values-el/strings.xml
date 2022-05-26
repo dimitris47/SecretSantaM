@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SecretSantaM</string>
+    <string name="numberOfPlayers">Αριθμός παικτών</string>
+    <string name="enter_names">Εισαγωγή ονομάτων</string>
+    <string name="calculate">Κλήρωση</string>
+    <string name="you_can_enter_names">"Εδώ μπορείτε να εισάγετε (προαιρετικά) τα ονόματα των παικτών"</string>
+    <string name="calculation_unsuccessful">"Η κλήρωση απέτυχε, παρακαλώ ξαναπροσπαθήστε"</string>
+    <string name="calculation_completed">"Η κλήρωση ολοκληρώθηκε επιτυχώς, μπορείτε να δείτε τα αποτελέσματά σας!"</string>
+    <string name="present">θα πάρεις δώρο στ@ν</string>
+</resources>
