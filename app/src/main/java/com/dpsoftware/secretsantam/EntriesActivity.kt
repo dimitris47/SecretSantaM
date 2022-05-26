@@ -22,7 +22,7 @@ class EntriesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_entries)
 
         Toast.makeText(this,
-            "You can (optionally) enter the names of the players here",
+            R.string.you_can_enter_names,
             Toast.LENGTH_LONG)
             .show()
 
@@ -44,12 +44,12 @@ class EntriesActivity : AppCompatActivity() {
         calcBtn.setOnClickListener {
             if (!calculate()) {
                 Toast.makeText(this,
-                    "Calculation was unsuccessful, please try again",
+                    R.string.calculation_unsuccessful,
                     Toast.LENGTH_LONG)
                     .show()
             } else {
                 Toast.makeText(this,
-                    "Calculation completed successfully, you can now get your results!",
+                    R.string.calculation_completed,
                     Toast.LENGTH_LONG)
                     .show()
                 val namesIntent = Intent(this, NamesActivity::class.java).apply {}

@@ -3,4 +3,8 @@
     <string name="numberOfPlayers">Number of players</string>
     <string name="enter_names">Enter names</string>
     <string name="calculate">Calculate</string>
+    <string name="you_can_enter_names">"You can (optionally) enter the names of the players here"</string>
+    <string name="calculation_unsuccessful">"Calculation was unsuccessful, please try again"</string>
+    <string name="calculation_completed">"Calculation completed successfully, you can now get your results!"</string>
+    <string name="present">you are getting a present for</string>
 </resources>
