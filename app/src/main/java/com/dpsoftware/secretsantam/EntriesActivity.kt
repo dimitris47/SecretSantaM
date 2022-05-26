@@ -32,7 +32,7 @@ class EntriesActivity : AppCompatActivity() {
         val editTexts = ArrayList<EditText>(num!!)
         for (i in 0 until num!!) {
             val editText = EditText(this)
-            editText.hint = "Player " + (i + 1)
+            editText.hint = resources.getString(R.string.player_entry) + (i + 1).toString()
             editText.inputType = android.text.InputType.TYPE_CLASS_TEXT
             editTexts.add(editText)
         }
@@ -55,7 +55,7 @@ class EntriesActivity : AppCompatActivity() {
                 for (i in 0 until num!!) {
                     var name = editTexts[i].text.toString()
                     if (name == "")
-                        name = "Player " + (i + 1)
+                        name = resources.getString(R.string.player_entry) + (i + 1)
                     playerNames.add(name)
                 }
                 namesIntent.putStringArrayListExtra("names", playerNames)
