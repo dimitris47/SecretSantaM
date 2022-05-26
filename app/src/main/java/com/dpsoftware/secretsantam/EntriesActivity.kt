@@ -1,6 +1,5 @@
 package com.dpsoftware.secretsantam
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -15,7 +14,6 @@ class EntriesActivity : AppCompatActivity() {
     private var calcCount: Int = 0
     private var players: ArrayList<Int>? = null
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation = (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
